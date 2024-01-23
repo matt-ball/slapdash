@@ -6,37 +6,8 @@
   "engines": {
     "node": ">=4.0.0"
   },
-  "devDependencies": {
-    "browserify": "^13.0.0",
-    "karma": "^0.13.22",
-    "karma-browserify": "^5.0.4",
-    "karma-chrome-launcher": "^0.2.3",
-    "karma-expect": "^1.1.2",
-    "karma-firefox-launcher": "^0.1.7",
-    "karma-mocha": "^0.2.2",
-    "karma-mocha-reporter": "^2.2.5",
-    "karma-phantomjs-launcher": "^1.0.4",
-    "karma-sauce-launcher": "^0.3.1",
-    "karma-sinon-ie": "^2.0.0-rc10",
-    "karma-sourcemap-loader": "^0.3.7",
-    "mocha": "^2.4.5",
-    "phantomjs-prebuilt": "^2.1.7",
-    "sinon": "^1.17.3",
-    "standard": "^6.0.8",
-    "uglify-js": "^2.6.2",
-    "watchify": "^3.7.0"
-  },
   "scripts": {
-    "lint": "standard ./src",
-    "test": "npm run lint && npm run test-main && npm run test-native && npm run test-poly",
-    "test-main": "SLAPDASH_FILES=test/index.js karma start --single-run",
-    "test-native": "SLAPDASH_FILES=test/native.js karma start --single-run",
-    "test-poly": "SLAPDASH_FILES=test/poly.js karma start --single-run",
-    "test-saucelabs": "SAUCY=true npm run test-main && SAUCY=true npm run test-poly",
-    "test-watch": "SLAPDASH_FILES=test/poly karma start --watch",
-    "build": "rm -rf ./dist && mkdir -p ./dist && ./scripts/build.js > ./dist/index.js && ./scripts/create-index.js > ./src/index.js",
-    "prepublish": "npm run build",
-    "postpublish": "./scripts/unbuild.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -48,17 +19,7 @@
     "url": "https://github.com/qubitdigital/slapdash/issues"
   },
   "homepage": "https://github.com/qubitdigital/slapdash#readme",
-  "standard": {
-    "globals": [
-      "describe",
-      "it",
-      "beforeEach",
-      "afterEach",
-      "before",
-      "after",
-      "expect",
-      "sinon"
-    ]
-  },
-  "dependencies": {}
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
 }
